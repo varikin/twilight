@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <body className="max-w-md mx-auto border-2 border-sky-500">
+      <body className="max-w-md mx-auto">
         {children}
       </body>
     </html>
