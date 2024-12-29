@@ -1,4 +1,3 @@
-
 export interface Character {
   name: string 
   species: string
@@ -18,4 +17,11 @@ export interface Stat {
   value: number
   proficient: boolean
   modifier: number
+}
+
+export interface Skill {
+  name: string
+  proficient: boolean
+  modifier: number
+  stat: string
 }
