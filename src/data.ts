@@ -1,4 +1,4 @@
-import { Character, Stat, Skill } from "./models.ts";
+import { Character, Stat, Skill, Weapon } from "./models.ts";
 
 const proficiency = 2
 const ac = 18
@@ -38,5 +38,9 @@ export let hero = new Character(
     SleightOfHand: new Skill(2, false, "Dexterity"),
     Stealth: new Skill(2, false, "Dexterity"),
     Survival: new Skill(2, false, "Wisdom")
-  }
+  },
+  [
+    new Weapon("longsword", 4, "1d8+4", "slashing", null, null),
+    new Weapon("dagger", 4, "1d8+4", "peircing", "30/60", "light")
+  ]
 )

@@ -1,5 +1,5 @@
 import { Stat, StatName } from "../models"
-import { cls } from "../utils"
+import { cls, format } from "../utils"
 
 export const Stats = ({ stats }: { stats: Record<StatName, Stat> }) => {
   return (
@@ -28,15 +28,15 @@ const StatItem = ({ name, stat }: { name: string, stat: Stat }) => {
     <div className="flex-auto text-center">
       <div className="text-xs uppercase">{name.substring(0, 3)}</div>
       <div className="text-2xl">{stat.value}</div>
-      <div className="text-2xl">{stat.displayModifier}</div>
+      <div className="text-xl">{format(stat.modifier)}</div>
     </div>
   )
 }
 
 const SavingThrow = ({ stat }: { stat: Stat }) => {
-  const classes = cls("flex-auto", "text-2xl", { "font-bold": stat.proficient })
+  const classes = cls("flex-auto", "text-xl", { "font-bold": stat.proficient })
   return (
-    <div className={classes}>{stat.displayModifier}</div>
+    <div className={classes}>{format(stat.modifier)}</div>
   )
 }
 

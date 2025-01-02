@@ -9,14 +9,11 @@ export const StatNames = [
 export type StatName = typeof StatNames[number]
 
 export class Stat {
-  displayModifier: string
   constructor(
     public readonly value: number,
     public readonly proficient: boolean,
     public readonly modifier: number,
-  ) {
-    this.displayModifier = getModifierDisplay(modifier)
-  }
+  ) {}
 }
 
 export const SkillNames = [
@@ -42,14 +39,22 @@ export const SkillNames = [
 export type SkillName = typeof SkillNames[number]
 
 export class Skill {
-  displayModifier: string
   constructor (
     public readonly modifier: number,
     public readonly proficient: boolean,
     public readonly stat: string
-  ) {
-    this.displayModifier = getModifierDisplay(modifier)
-  }
+  ) {}
+}
+
+export class Weapon {
+  constructor (
+    public readonly name: string,
+    public readonly attackBonus: number,
+    public readonly damage: string,
+    public readonly damageType: string,
+    public readonly range?: string,
+    public readonly notes?: string,
+  ) {}
 }
 
 export class Character {
@@ -61,16 +66,7 @@ export class Character {
     public readonly speed: number,
     public readonly initiative: number,
     public readonly stats: Record<StatName, Stat>,
-    public readonly skills: Record<SkillName, Skill>
+    public readonly skills: Record<SkillName, Skill>,
+    public readonly weapons: Weapon[],
   ) {}
-}
-
-function getModifierDisplay(modifier: number): string {
-  if (modifier > 0) {
-    return  "+" + modifier
-  } else if (modifier < 0) {
-    return "-" + modifier
-  } else {
-    return modifier.toString()
-  }
 }

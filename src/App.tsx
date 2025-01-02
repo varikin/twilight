@@ -1,5 +1,6 @@
 import { Stats } from "./components/stats"
 import { Skills } from "./components/skills"
+import { Attacks } from "./components/attacks"
 import { fetchCharacter } from "./api"
 import "./App.css"
 
@@ -20,25 +21,18 @@ export default function App() {
       <div className="flex flex-row">
         <HeroData name="ac" value={hero.ac} />
         <HeroData name="hp" value="57/57" />
-        <HeroData name="temp xp" value="0" />
+        <HeroData name="temp hp" value="0" />
         <HeroData name="hit die" value="5d10" />
         <HeroData name="speed" value="30" />
       </div>
       <div className="flex flex-row">
-        <div className="flex flex-row flex-auto gap-2 items-center">
-          <div className="text-xs uppercase">initiative</div>
-          <div className="text-2xl">3</div>
-        </div>
-        <div className="flex flex-row flex-auto gap-2 items-center">
-          <div className="text-xs uppercase">proficiency bonus</div>
-          <div className="text-2xl">+3</div>
-        </div>
-        <div className="flex flex-row flex-auto gap-2 items-center">
-          <div className="text-xs uppercase">inspiration</div>
-          <input type="checkbox" />
-        </div>
+        <HeroData name="initiative" value="3" />
+        <HeroData name="proficiency bonus" value="+3" />
+        <HeroData name="passive perception" value="+3" />
+        <HeroData name="inspiration" value="-" />
       </div>
       <Stats stats={hero.stats} />
+      <Attacks weapons={hero.weapons} />
       <Skills skills={hero.skills} />
     </div>
   )

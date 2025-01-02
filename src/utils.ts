@@ -3,7 +3,6 @@ type ClassName = string | { [name: string]: boolean }
 export function cls(...values: ClassName[]) {
   let result = ""
   for (let value of values) {
-    console.log(value)
     if (typeof value === "string") {
       result && (result += " ")
       result += value
@@ -17,4 +16,14 @@ export function cls(...values: ClassName[]) {
     }
   }
   return result
+}
+
+export function format(value: number): string {
+  if (value > 0) {
+    return "+" + value
+  } else if (value < 0) {
+    return "-" + value
+  } else {
+    return value.toString()
+  }
 }
