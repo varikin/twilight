@@ -15,7 +15,7 @@ export const Skills = ({ skills }: { skills: Record<SkillName, Skill> }) => {
 }
 
 const SkillComp = ({ name, skill }: { name: SkillName, skill: Skill }) => {
-  const classes = cls({ "font-bold": skill.proficent })
+  const classes = cls({ "font-bold text-emerald-200": skill.proficient })
   return (
     <div key={name} className="flex flex-row gap-2 items-center">
       <div className={classes}>{name}</div>

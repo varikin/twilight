@@ -34,7 +34,11 @@ const StatItem = ({ name, stat }: { name: string, stat: Stat }) => {
 }
 
 const SavingThrow = ({ stat }: { stat: Stat }) => {
-  const classes = cls("flex-auto", "text-xl", { "font-bold": stat.proficient })
+  const classes = cls(
+    "flex-auto",
+    "text-xl",
+    { "font-bold text-emerald-200": stat.proficient }
+  )
   return (
     <div className={classes}>{format(stat.modifier)}</div>
   )
