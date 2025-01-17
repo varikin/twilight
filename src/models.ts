@@ -57,6 +57,35 @@ export class Weapon {
   ) {}
 }
 
+export type ActionType = "Action" | "Reaction" | "Bonus Action" | "Instant" | "Other"
+export type SpellComponent = "Verbal" | "Somatic" | "Material"
+  
+
+export class Spell {
+  constructor (
+    public readonly name: string,
+    public readonly level: number,
+    public readonly castingTime: ActionType,
+    public readonly duration: string,
+    public readonly range: string,
+    public readonly components: SpellComponent[],
+    public readonly school: string,
+    public readonly save: StatName,
+    public readonly description: string
+  ){}
+}
+
+
+export class Spellcasting {
+  constructor (
+    public readonly ability: StatName,
+    public readonly saveDc: number,
+    public readonly attackBonus: number,
+    public readonly slots: Record<number, number>,
+    public readonly spells: Spell[]
+  ) {}
+}
+
 export class Character {
   constructor (
     public readonly name: string,
@@ -68,5 +97,6 @@ export class Character {
     public readonly stats: Record<StatName, Stat>,
     public readonly skills: Record<SkillName, Skill>,
     public readonly weapons: Weapon[],
+    public readonly spellcasting: Spellcasting
   ) {}
 }
