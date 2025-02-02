@@ -1,4 +1,4 @@
-import { Character, Stat, Skill, Weapon } from "./models.ts";
+import { Character, Stat, Skill, Weapon } from "@/models";
 
 const proficiency = 2
 const ac = 18

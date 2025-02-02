@@ -1,8 +1,8 @@
-import { Stats } from "./components/stats"
-import { Skills } from "./components/skills"
-import { Attacks } from "./components/attacks"
-import { fetchCharacter } from "./api"
-import "./App.css"
+import { Stats } from "@/components/stats"
+import { Skills } from "@/components/skills"
+import { Attacks } from "@/components/attacks"
+import { fetchCharacter } from "@/api"
+import "@/App.css"
 
 export default function App() {
 

@@ -1,5 +1,5 @@
-import { Character, Stat } from "../models/models"
-import hero from "../models/hero.json"
+import { Character, Stat } from "@/models"
+import { hero } from "@/data"
 
 export default function Home() {
   
